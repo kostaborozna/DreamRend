@@ -13,7 +13,7 @@ namespace DreamRend
 		{
 			apNamelabel.Text = apName;
 			areaLabel.Text = area.ToString() + " м²";
-			if(roomCount == 0 )
+			if (roomCount == 0)
 			{
 				roomsLabel.Text = "Студия";
 			}
@@ -26,7 +26,13 @@ namespace DreamRend
 			{
 				pictureBox1.Image = Image.FromStream(ms);
 			}
+		}
 
+
+		public event EventHandler OpenDetailsClicked;
+		public void OnOpenDetailsClicked()
+		{
+			OpenDetailsClicked?.Invoke(this, EventArgs.Empty);
 		}
 	}
 }

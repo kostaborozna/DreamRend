@@ -64,11 +64,20 @@ namespace DreamRend
 					ControlForMainPage apartmentUserControl = new ControlForMainPage();
 					apartmentUserControl.SetApartmentInfo(apartment.ApName, apartment.Area, apartment.MainPhoto, apartment.Cost, apartment.RoomCount);
 
+					apartmentUserControl.OpenDetailsClicked += ApartmentUserControl_OpenDetailsClicked;
+
 					tableLayoutPanel2.Controls.Add(apartmentUserControl);
 				}
 
 				UpdateNavigationButtons();
 			}
+		}
+		private void ApartmentUserControl_OpenDetailsClicked(object sender, EventArgs e)
+		{
+			
+			ApartamentPage detailsForm = new ApartamentPage();
+			detailsForm.Show();
+			this.Close();
 		}
 
 		private void UpdateNavigationButtons()

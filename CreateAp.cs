@@ -59,7 +59,7 @@ namespace DreamRend
 			selectedRoom = roomsCountComboBox.SelectedIndex;
 
 
-			if (validator.IsValidCost(costTextBox.Text))
+			if (!validator.IsValidCost(costTextBox.Text))
 			{
 				return;
 			}
@@ -87,7 +87,7 @@ namespace DreamRend
 
 			string info = richTextBox1.Text;
 
-			if (validator.IsValidArea(areaTextBox.Text))
+			if (!validator.IsValidArea(areaTextBox.Text))
 			{
 				return;
 			}
