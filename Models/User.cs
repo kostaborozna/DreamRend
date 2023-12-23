@@ -13,8 +13,6 @@ public partial class User
 
     public string? Mname { get; set; }
 
-    public int? Rating { get; set; }
-
     public string? Password { get; set; }
 
     public virtual ICollection<Apartment> Apartments { get; set; } = new List<Apartment>();

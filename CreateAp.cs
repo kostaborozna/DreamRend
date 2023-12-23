@@ -30,7 +30,9 @@ namespace DreamRend
 
 		private void button2_Click(object sender, EventArgs e)
 		{
+			this.Close();
 			MainPage mainPage = new MainPage();
+			mainPage.Show();
 		}
 		private byte[] ConvertImageToByteArray(Image image)
 		{
@@ -91,9 +93,14 @@ namespace DreamRend
 			{
 				return;
 			}
-			int area = int.Parse(costTextBox.Text);
+			int area = int.Parse(areaTextBox.Text);
 
+			if (!validator.IsValidArea(areaTextBox.Text))
+			{
+				return;
+			}
 
+			int floor = int.Parse(floorTextBox.Text);
 
 
 
@@ -108,6 +115,7 @@ namespace DreamRend
 					ApName = ap_naname,
 					Area = area,
 					Info = info,
+					Floor = floor,
 					MainPhoto = ConvertImageToByteArray(pictureBox1.Image)
 
 				};

@@ -197,7 +197,7 @@
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 61.7886162F));
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 38.2113838F));
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 125F));
-			tableLayoutPanel2.Size = new Size(647, 495);
+			tableLayoutPanel2.Size = new Size(647, 399);
 			tableLayoutPanel2.TabIndex = 1;
 			// 
 			// btnNextPage

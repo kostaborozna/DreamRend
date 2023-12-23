@@ -62,30 +62,24 @@ namespace DreamRend
 				foreach (var apartment in apartments)
 				{
 					ControlForMainPage apartmentUserControl = new ControlForMainPage();
-					apartmentUserControl.SetApartmentInfo(apartment.ApName, apartment.Area, apartment.MainPhoto, apartment.Cost, apartment.RoomCount);
 
-					apartmentUserControl.OpenDetailsClicked += ApartmentUserControl_OpenDetailsClicked;
+					apartmentUserControl.SetApartmentInfo(apartment.Area, apartment.MainPhoto, 
+						apartment.Cost, apartment.RoomCount,apartment.Floor, apartment.ApartmentId);
 
 					tableLayoutPanel2.Controls.Add(apartmentUserControl);
+					
+					
+
 				}
 
 				UpdateNavigationButtons();
 			}
 		}
-		private void ApartmentUserControl_OpenDetailsClicked(object sender, EventArgs e)
-		{
-			
-			ApartamentPage detailsForm = new ApartamentPage();
-			detailsForm.Show();
-			this.Close();
-		}
+
 
 		private void UpdateNavigationButtons()
 		{
-
 			btnNextPage.Visible = HasNextPage();
-
-
 		}
 		private bool HasNextPage()
 		{
@@ -104,6 +98,12 @@ namespace DreamRend
 			MainPage_Load(sender, e);
 		}
 
-		
+
+		private void openAprtamentPage(long apId)
+		{
+			this.Close();
+			ApartamentPage apartamentPage = new ApartamentPage(apId);
+			apartamentPage.Show();
+		}
 	}
 }

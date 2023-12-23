@@ -39,8 +39,9 @@ public partial class DreamRendContext : DbContext
                 .HasColumnName("ap_name");
             entity.Property(e => e.Area).HasColumnName("area");
             entity.Property(e => e.Cost).HasColumnName("cost");
+            entity.Property(e => e.Floor).HasColumnName("floor");
             entity.Property(e => e.Info)
-                .HasMaxLength(200)
+                .HasMaxLength(5000)
                 .HasColumnName("info");
             entity.Property(e => e.MainPhoto).HasColumnName("main_photo");
             entity.Property(e => e.Period).HasColumnName("period");
@@ -73,7 +74,6 @@ public partial class DreamRendContext : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(45)
                 .HasColumnName("password");
-            entity.Property(e => e.Rating).HasColumnName("rating");
         });
 
         OnModelCreatingPartial(modelBuilder);

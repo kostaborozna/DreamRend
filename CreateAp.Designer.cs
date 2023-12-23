@@ -30,8 +30,7 @@
 		{
 			pictureBox1 = new PictureBox();
 			tableLayoutPanel1 = new TableLayoutPanel();
-			richTextBox1 = new RichTextBox();
-			label4 = new Label();
+			label7 = new Label();
 			button2 = new Button();
 			button3 = new Button();
 			areaTextBox = new TextBox();
@@ -44,6 +43,9 @@
 			label1 = new Label();
 			label2 = new Label();
 			periodComboBox = new ComboBox();
+			floorTextBox = new TextBox();
+			richTextBox1 = new RichTextBox();
+			label4 = new Label();
 			tableLayoutPanel2 = new TableLayoutPanel();
 			button1 = new Button();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -56,7 +58,7 @@
 			pictureBox1.BorderStyle = BorderStyle.FixedSingle;
 			pictureBox1.Location = new Point(3, 3);
 			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(408, 309);
+			pictureBox1.Size = new Size(385, 296);
 			pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 			pictureBox1.TabIndex = 0;
 			pictureBox1.TabStop = false;
@@ -67,8 +69,7 @@
 			tableLayoutPanel1.ColumnCount = 2;
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-			tableLayoutPanel1.Controls.Add(richTextBox1, 1, 5);
-			tableLayoutPanel1.Controls.Add(label4, 0, 5);
+			tableLayoutPanel1.Controls.Add(label7, 0, 5);
 			tableLayoutPanel1.Controls.Add(button2, 0, 6);
 			tableLayoutPanel1.Controls.Add(button3, 1, 6);
 			tableLayoutPanel1.Controls.Add(areaTextBox, 1, 4);
@@ -81,7 +82,8 @@
 			tableLayoutPanel1.Controls.Add(label1, 0, 1);
 			tableLayoutPanel1.Controls.Add(label2, 0, 0);
 			tableLayoutPanel1.Controls.Add(periodComboBox, 1, 0);
-			tableLayoutPanel1.Location = new Point(453, 12);
+			tableLayoutPanel1.Controls.Add(floorTextBox, 1, 5);
+			tableLayoutPanel1.Location = new Point(431, 12);
 			tableLayoutPanel1.Name = "tableLayoutPanel1";
 			tableLayoutPanel1.RowCount = 7;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -91,33 +93,28 @@
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 116F));
-			tableLayoutPanel1.Size = new Size(397, 456);
+			tableLayoutPanel1.Size = new Size(469, 435);
 			tableLayoutPanel1.TabIndex = 1;
 			// 
-			// richTextBox1
+			// label7
 			// 
-			richTextBox1.Location = new Point(201, 268);
-			richTextBox1.Name = "richTextBox1";
-			richTextBox1.Size = new Size(193, 59);
-			richTextBox1.TabIndex = 4;
-			richTextBox1.Text = "";
-			// 
-			// label4
-			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(3, 265);
-			label4.Name = "label4";
-			label4.Size = new Size(62, 15);
-			label4.TabIndex = 3;
-			label4.Text = "Описание";
-			label4.TextAlign = ContentAlignment.MiddleCenter;
+			label7.AutoSize = true;
+			label7.Font = new Font("Microsoft JhengHei UI", 12F);
+			label7.Location = new Point(3, 243);
+			label7.Name = "label7";
+			label7.Size = new Size(50, 20);
+			label7.TabIndex = 5;
+			label7.Text = "Этаж";
+			label7.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// button2
 			// 
 			button2.BackColor = Color.FromArgb(255, 192, 192);
-			button2.Location = new Point(3, 343);
+			button2.Dock = DockStyle.Fill;
+			button2.Font = new Font("Microsoft JhengHei UI", 12F);
+			button2.Location = new Point(3, 321);
 			button2.Name = "button2";
-			button2.Size = new Size(192, 75);
+			button2.Size = new Size(228, 111);
 			button2.TabIndex = 7;
 			button2.Text = "Выйти";
 			button2.UseVisualStyleBackColor = false;
@@ -126,17 +123,20 @@
 			// button3
 			// 
 			button3.BackColor = Color.FromArgb(135, 203, 172);
-			button3.Location = new Point(201, 343);
+			button3.Dock = DockStyle.Fill;
+			button3.Font = new Font("Microsoft JhengHei UI", 12F);
+			button3.Location = new Point(237, 321);
 			button3.Name = "button3";
-			button3.Size = new Size(193, 75);
+			button3.Size = new Size(229, 111);
 			button3.TabIndex = 8;
-			button3.Text = "Отправить объявление на проверку";
+			button3.Text = "Отправить объявление";
 			button3.UseVisualStyleBackColor = false;
 			button3.Click += button3_Click;
 			// 
 			// areaTextBox
 			// 
-			areaTextBox.Location = new Point(201, 208);
+			areaTextBox.Font = new Font("Microsoft JhengHei UI", 12F);
+			areaTextBox.Location = new Point(237, 186);
 			areaTextBox.Multiline = true;
 			areaTextBox.Name = "areaTextBox";
 			areaTextBox.PlaceholderText = "м²";
@@ -146,16 +146,18 @@
 			// roomsCountComboBox
 			// 
 			roomsCountComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			roomsCountComboBox.Font = new Font("Microsoft JhengHei UI", 12F);
 			roomsCountComboBox.FormattingEnabled = true;
 			roomsCountComboBox.Items.AddRange(new object[] { "Студия", "1 комната", "2 комнаты", "3 комнаты ", "4 комнаты", "5 и больше" });
-			roomsCountComboBox.Location = new Point(201, 101);
+			roomsCountComboBox.Location = new Point(237, 79);
 			roomsCountComboBox.Name = "roomsCountComboBox";
-			roomsCountComboBox.Size = new Size(178, 23);
+			roomsCountComboBox.Size = new Size(178, 28);
 			roomsCountComboBox.TabIndex = 6;
 			// 
 			// addrestextBox
 			// 
-			addrestextBox.Location = new Point(201, 159);
+			addrestextBox.Font = new Font("Microsoft JhengHei UI", 12F);
+			addrestextBox.Location = new Point(237, 137);
 			addrestextBox.Multiline = true;
 			addrestextBox.Name = "addrestextBox";
 			addrestextBox.Size = new Size(193, 36);
@@ -164,9 +166,10 @@
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Location = new Point(3, 98);
+			label3.Font = new Font("Microsoft JhengHei UI", 12F);
+			label3.Location = new Point(3, 76);
 			label3.Name = "label3";
-			label3.Size = new Size(122, 15);
+			label3.Size = new Size(169, 20);
 			label3.TabIndex = 5;
 			label3.Text = "Колличество комнат";
 			label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -174,35 +177,39 @@
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Location = new Point(3, 205);
+			label6.Font = new Font("Microsoft JhengHei UI", 12F);
+			label6.Location = new Point(3, 183);
 			label6.Name = "label6";
-			label6.Size = new Size(59, 15);
+			label6.Size = new Size(82, 20);
 			label6.TabIndex = 3;
 			label6.Text = "Площадь";
 			// 
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Location = new Point(3, 156);
+			label5.Font = new Font("Microsoft JhengHei UI", 12F);
+			label5.Location = new Point(3, 134);
 			label5.Name = "label5";
-			label5.Size = new Size(40, 15);
+			label5.Size = new Size(57, 20);
 			label5.TabIndex = 0;
 			label5.Text = "Адрес";
 			// 
 			// costTextBox
 			// 
 			costTextBox.Dock = DockStyle.Fill;
-			costTextBox.Location = new Point(201, 52);
+			costTextBox.Font = new Font("Microsoft JhengHei UI", 12F);
+			costTextBox.Location = new Point(237, 41);
 			costTextBox.Name = "costTextBox";
-			costTextBox.Size = new Size(193, 23);
+			costTextBox.Size = new Size(229, 28);
 			costTextBox.TabIndex = 2;
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Location = new Point(3, 49);
+			label1.Font = new Font("Microsoft JhengHei UI", 12F);
+			label1.Location = new Point(3, 38);
 			label1.Name = "label1";
-			label1.Size = new Size(35, 15);
+			label1.Size = new Size(48, 20);
 			label1.TabIndex = 0;
 			label1.Text = "Цена";
 			label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -210,9 +217,10 @@
 			// label2
 			// 
 			label2.AutoSize = true;
+			label2.Font = new Font("Microsoft JhengHei UI", 12F);
 			label2.Location = new Point(3, 0);
 			label2.Name = "label2";
-			label2.Size = new Size(91, 15);
+			label2.Size = new Size(123, 20);
 			label2.TabIndex = 3;
 			label2.Text = "На какой срок?";
 			label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -221,12 +229,42 @@
 			// 
 			periodComboBox.Dock = DockStyle.Left;
 			periodComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			periodComboBox.Font = new Font("Microsoft JhengHei UI", 12F);
 			periodComboBox.FormattingEnabled = true;
 			periodComboBox.Items.AddRange(new object[] { "На длительный срок", "Посуточно" });
-			periodComboBox.Location = new Point(201, 3);
+			periodComboBox.Location = new Point(237, 3);
 			periodComboBox.Name = "periodComboBox";
-			periodComboBox.Size = new Size(178, 23);
+			periodComboBox.Size = new Size(178, 28);
 			periodComboBox.TabIndex = 4;
+			// 
+			// floorTextBox
+			// 
+			floorTextBox.Font = new Font("Microsoft JhengHei UI", 12F);
+			floorTextBox.Location = new Point(237, 246);
+			floorTextBox.Multiline = true;
+			floorTextBox.Name = "floorTextBox";
+			floorTextBox.Size = new Size(168, 37);
+			floorTextBox.TabIndex = 9;
+			// 
+			// richTextBox1
+			// 
+			richTextBox1.Font = new Font("Microsoft JhengHei UI", 12F);
+			richTextBox1.Location = new Point(12, 506);
+			richTextBox1.Name = "richTextBox1";
+			richTextBox1.Size = new Size(470, 222);
+			richTextBox1.TabIndex = 4;
+			richTextBox1.Text = "";
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Font = new Font("Microsoft JhengHei UI", 12F);
+			label4.Location = new Point(181, 471);
+			label4.Name = "label4";
+			label4.Size = new Size(83, 20);
+			label4.TabIndex = 3;
+			label4.Text = "Описание";
+			label4.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// tableLayoutPanel2
 			// 
@@ -234,18 +272,19 @@
 			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
 			tableLayoutPanel2.Controls.Add(button1, 0, 1);
 			tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
-			tableLayoutPanel2.Location = new Point(12, 15);
+			tableLayoutPanel2.Location = new Point(12, 12);
 			tableLayoutPanel2.Name = "tableLayoutPanel2";
 			tableLayoutPanel2.RowCount = 2;
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 69.637886F));
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 30.3621178F));
-			tableLayoutPanel2.Size = new Size(414, 453);
+			tableLayoutPanel2.Size = new Size(391, 435);
 			tableLayoutPanel2.TabIndex = 2;
 			// 
 			// button1
 			// 
 			button1.Anchor = AnchorStyles.Top;
-			button1.Location = new Point(131, 318);
+			button1.Font = new Font("Microsoft JhengHei UI", 12F);
+			button1.Location = new Point(119, 305);
 			button1.Name = "button1";
 			button1.Size = new Size(152, 98);
 			button1.TabIndex = 1;
@@ -257,8 +296,10 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1000, 614);
+			ClientSize = new Size(957, 779);
+			Controls.Add(richTextBox1);
 			Controls.Add(tableLayoutPanel2);
+			Controls.Add(label4);
 			Controls.Add(tableLayoutPanel1);
 			Name = "CreateAp";
 			Text = "CreateAp";
@@ -267,6 +308,7 @@
 			tableLayoutPanel1.PerformLayout();
 			tableLayoutPanel2.ResumeLayout(false);
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
@@ -289,5 +331,7 @@
 		private Label label5;
 		private Label label4;
 		private RichTextBox richTextBox1;
+		private Label label7;
+		private TextBox floorTextBox;
 	}
 }

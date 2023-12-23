@@ -7,32 +7,49 @@ namespace DreamRend
 		public ControlForMainPage()
 		{
 			InitializeComponent();
+			AttachEventToAllControls(this, OpenApartamentClickHandler);
 		}
-
-		public void SetApartmentInfo(string apName, int? area, byte[] mainPhoto, int? cost, int? roomCount)
+		private long apartamentId;
+		public void SetApartmentInfo(int? area, byte[] mainPhoto, int? cost, int? roomCount, int? floor, long apId)
 		{
-			apNamelabel.Text = apName;
-			areaLabel.Text = area.ToString() + " м²";
-			if (roomCount == 0)
-			{
-				roomsLabel.Text = "Студия";
-			}
-			else
-			{
-				roomsLabel.Text = $"{roomCount}-комн. кв.";
-			}
-			costLabel.Text = cost.ToString();
+			apartamentId = apId;
+			SetNameOfAppartament(roomCount, area, floor);
+
+
+			costLabel.Text = cost.ToString() + "₽";
 			using (MemoryStream ms = new MemoryStream(mainPhoto))
 			{
 				pictureBox1.Image = Image.FromStream(ms);
 			}
+
 		}
 
-
-		public event EventHandler OpenDetailsClicked;
-		public void OnOpenDetailsClicked()
+		private void AttachEventToAllControls(Control control, EventHandler eventHandler)
 		{
-			OpenDetailsClicked?.Invoke(this, EventArgs.Empty);
+			foreach (Control ctrl in control.Controls)
+			{
+				AttachEventToAllControls(ctrl, eventHandler);
+				ctrl.Click += eventHandler;
+			}
+		}
+		private void OpenApartamentClickHandler(object sender, EventArgs e)
+		{
+			long apId = apartamentId;
+			ApartamentPage apartamentPage = new ApartamentPage(apId);
+			apartamentPage.Show();
+		}
+
+		private void SetNameOfAppartament(int? roomCount, int? area, int? floor)
+		{
+			if (roomCount == 0)
+			{
+				apNamelabel.Text = $"Квартира-студия, {area} м², {floor} эт.";
+			}
+			else
+			{
+				apNamelabel.Text = $"{roomCount}-к. квартира, {area} м², {floor} эт.";
+			}
+
 		}
 	}
 }

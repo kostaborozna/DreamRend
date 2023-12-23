@@ -23,5 +23,7 @@ public partial class Apartment
 
     public int? Area { get; set; }
 
+    public int? Floor { get; set; }
+
     public virtual User? User { get; set; }
 }
