@@ -1,5 +1,4 @@
 ﻿using DreamRend.Models;
-using System.Windows.Forms;
 
 namespace DreamRend
 {
@@ -44,6 +43,7 @@ namespace DreamRend
 		private void UpdateNavigationButtons()
 		{
 			iconButton2.Visible = HasNextPage();
+			iconButton1.Visible = HasPreviousPage();
 		}
 
 		private bool HasNextPage()
@@ -57,6 +57,17 @@ namespace DreamRend
 					.Any();
 			}
 
+		}
+
+		private bool HasPreviousPage()
+		{
+			using (var context = new DreamRendContext())
+			{
+				return context.Apartments
+					.OrderBy(a => a.ApartmentId)
+					.Take((currentPage - 1) * itemsPerPage)
+					.Any();
+			}
 		}
 
 		private void button2_Click(object sender, EventArgs e)

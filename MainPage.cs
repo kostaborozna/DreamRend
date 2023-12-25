@@ -80,6 +80,7 @@ namespace DreamRend
 		private void UpdateNavigationButtons()
 		{
 			nexticonButton.Visible = HasNextPage();
+			iconButton5.Visible = HasPreviousPage();
 		}
 		private bool HasNextPage()
 		{
@@ -91,6 +92,16 @@ namespace DreamRend
 					.Any();
 			}
 
+		}
+		private bool HasPreviousPage()
+		{
+			using (var context = new DreamRendContext())
+			{
+				return context.Apartments
+					.OrderBy(a => a.ApartmentId)
+					.Take((currentPage - 1) * itemsPerPage)
+					.Any();
+			}
 		}
 		private void btnNextPage_Click(object sender, EventArgs e)
 		{

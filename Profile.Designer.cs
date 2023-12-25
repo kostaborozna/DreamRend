@@ -125,9 +125,10 @@
 			iconButton2.IconColor = Color.Black;
 			iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			iconButton2.IconSize = 50;
-			iconButton2.Location = new Point(696, 316);
+			iconButton2.Location = new Point(994, 527);
+			iconButton2.Margin = new Padding(4, 5, 4, 5);
 			iconButton2.Name = "iconButton2";
-			iconButton2.Size = new Size(89, 60);
+			iconButton2.Size = new Size(127, 100);
 			iconButton2.TabIndex = 8;
 			iconButton2.UseVisualStyleBackColor = true;
 			iconButton2.Click += iconButton2_Click;
@@ -140,9 +141,10 @@
 			iconButton1.IconColor = Color.Black;
 			iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			iconButton1.IconSize = 50;
-			iconButton1.Location = new Point(601, 316);
+			iconButton1.Location = new Point(859, 527);
+			iconButton1.Margin = new Padding(4, 5, 4, 5);
 			iconButton1.Name = "iconButton1";
-			iconButton1.Size = new Size(89, 60);
+			iconButton1.Size = new Size(127, 100);
 			iconButton1.TabIndex = 7;
 			iconButton1.UseVisualStyleBackColor = true;
 			iconButton1.Click += iconButton1_Click;
@@ -152,9 +154,10 @@
 			button2.BackColor = Color.FromArgb(0, 122, 174);
 			button2.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Bold);
 			button2.ForeColor = SystemColors.Control;
-			button2.Location = new Point(38, 308);
+			button2.Location = new Point(54, 513);
+			button2.Margin = new Padding(4, 5, 4, 5);
 			button2.Name = "button2";
-			button2.Size = new Size(219, 68);
+			button2.Size = new Size(313, 113);
 			button2.TabIndex = 6;
 			button2.Text = "Вернутся на главную страницу";
 			button2.UseVisualStyleBackColor = false;
@@ -166,26 +169,28 @@
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
 			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-			tableLayoutPanel1.Location = new Point(38, 20);
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 29F));
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 29F));
+			tableLayoutPanel1.Location = new Point(54, 33);
+			tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
 			tableLayoutPanel1.Name = "tableLayoutPanel1";
 			tableLayoutPanel1.RowCount = 2;
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 69.94536F));
 			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30.0546455F));
-			tableLayoutPanel1.Size = new Size(747, 269);
+			tableLayoutPanel1.Size = new Size(1067, 448);
 			tableLayoutPanel1.TabIndex = 5;
 			// 
 			// Profile
 			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(811, 403);
+			ClientSize = new Size(1159, 672);
 			Controls.Add(iconButton2);
 			Controls.Add(iconButton1);
 			Controls.Add(button2);
 			Controls.Add(tableLayoutPanel1);
 			Icon = (Icon)resources.GetObject("$this.Icon");
+			Margin = new Padding(4, 5, 4, 5);
 			Name = "Profile";
 			Text = "DreamRent";
 			Load += Profile_Load;
