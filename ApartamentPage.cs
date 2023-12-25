@@ -1,10 +1,11 @@
 ﻿using DreamRend.Models;
-using System.Drawing.Text;
 
 namespace DreamRend
 {
 	public partial class ApartamentPage : Form
 	{
+		private string commInfo;
+
 		public ApartamentPage(long apID)
 		{
 			InitializeComponent();
@@ -25,6 +26,7 @@ namespace DreamRend
 								  apartment.Area,
 								  apartment.Floor,
 								  user.Fname,
+								  user.CommMethod,
 							  }).FirstOrDefault();
 
 				if (result != null)
@@ -50,13 +52,17 @@ namespace DreamRend
 						pictureBox1.Image = Image.FromStream(ms);
 					}
 
+					commInfo = result.CommMethod;
+		
+
+
 
 				}
 			}
 
 		}
 
-		private void SetNameOfAppartament(int? roomCount, int? area, int? floor)
+		private void SetNameOfAppartament(int roomCount, int area, int floor)
 		{
 			if (roomCount == 0)
 			{
@@ -68,7 +74,7 @@ namespace DreamRend
 			}
 		}
 
-		private void SetCost(int? period, int? cost)
+		private void SetCost(int period, int cost)
 		{
 			if (period == 0)
 			{
@@ -80,7 +86,7 @@ namespace DreamRend
 			}
 		}
 
-		private string SetRooomCount(int? roomCount)
+		private string SetRooomCount(int roomCount)
 		{
 			if (roomCount == 0)
 			{
@@ -88,13 +94,15 @@ namespace DreamRend
 			}
 			else
 			{
-				return roomCount.ToString() + "кв.";
+				return roomCount.ToString();
 			}
 		}
 
+	
+
 		private void button1_Click(object sender, EventArgs e)
 		{
-
+			MessageBoxHelper.ShowSuccess($"Способ связи: {commInfo}") ;
 		}
 	}
 }

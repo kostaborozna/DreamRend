@@ -1,4 +1,6 @@
-﻿namespace DreamRend
+﻿using System.Text.RegularExpressions;
+
+namespace DreamRend
 {
 	internal class Validator
 	{
@@ -104,9 +106,50 @@
 				MessageBoxHelper.ShowError("Такого здания не бывает!");
 				return false;
 			}
-			
-
 			return true;
+		}
+
+		public bool IsValidEmail(string email)
+		{
+
+			if (string.IsNullOrEmpty(email))
+			{
+				MessageBoxHelper.ShowError("Введите почту или пароль!");
+				return false;
+			}
+			string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+			
+			if(!Regex.IsMatch(email, pattern))
+			{
+				MessageBoxHelper.ShowError("Введина не правильная почта!");
+				return false;
+			}
+			if(email.Length > 80)
+			{
+				MessageBoxHelper.ShowError("Введина не правильная почта!");
+				return false;
+			}
+			return true;
+		}
+
+		public bool IsValidPassword(string password)
+		{
+			int minLength = 8;
+			int maxLength = 45;
+
+			if (password.Length < minLength || password.Length > maxLength)
+			{
+				MessageBoxHelper.ShowError("Пароль не соответсвует длине (8-45)!");
+				return false;
+			}
+			if (!password.Any(char.IsUpper))
+			{
+				MessageBoxHelper.ShowError("Введите большие буквы в пароль!");
+				return false;
+			}
+			return true;
+
 		}
 	}
 }

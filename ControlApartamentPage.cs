@@ -2,15 +2,19 @@
 
 namespace DreamRend
 {
-	public partial class ControlForMainPage : UserControl
+	public partial class ControlApartamentPage : UserControl
 	{
-		public ControlForMainPage()
+		public ControlApartamentPage()
 		{
 			InitializeComponent();
 			AttachEventToAllControls(this, OpenApartamentClickHandler);
 		}
+		public void DisableClick()
+		{
+			DetachEventFromAllControls(this, OpenApartamentClickHandler);
+		}
 		private long apartamentId;
-		public void SetApartmentInfo(int? area, byte[] mainPhoto, int? cost, int? roomCount, int? floor, long apId)
+		public void SetApartmentInfo(int area, byte[] mainPhoto, int cost, int roomCount, int floor, long apId)
 		{
 			apartamentId = apId;
 			SetNameOfAppartament(roomCount, area, floor);
@@ -32,6 +36,16 @@ namespace DreamRend
 				ctrl.Click += eventHandler;
 			}
 		}
+
+		private void DetachEventFromAllControls(Control control, EventHandler eventHandler)
+		{
+			foreach (Control ctrl in control.Controls)
+			{
+				DetachEventFromAllControls(ctrl, eventHandler);
+				ctrl.Click -= eventHandler;
+			}
+		}
+
 		private void OpenApartamentClickHandler(object sender, EventArgs e)
 		{
 			long apId = apartamentId;
@@ -39,7 +53,7 @@ namespace DreamRend
 			apartamentPage.Show();
 		}
 
-		private void SetNameOfAppartament(int? roomCount, int? area, int? floor)
+		private void SetNameOfAppartament(int roomCount, int area, int floor)
 		{
 			if (roomCount == 0)
 			{

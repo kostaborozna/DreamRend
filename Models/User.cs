@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DreamRend.Models;
+﻿namespace DreamRend.Models;
 
 public partial class User
 {
-    public long UserId { get; set; }
+	public long UserId { get; set; }
 
-    public string? EMail { get; set; }
+	public string EMail { get; set; } = null!;
 
-    public string? Fname { get; set; }
+	public string Fname { get; set; } = null!;
 
-    public string? Mname { get; set; }
+	public string Mname { get; set; } = null!;
 
-    public string? Password { get; set; }
+	public string PasswordHash { get; set; } = null!;
 
-    public virtual ICollection<Apartment> Apartments { get; set; } = new List<Apartment>();
+	public string CommMethod { get; set; }
+
+	public string Salt { get; set; } = null!;
+
+	public virtual ICollection<Apartment> Apartments { get; set; } = new List<Apartment>();
 }

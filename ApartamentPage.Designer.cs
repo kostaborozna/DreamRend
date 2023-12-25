@@ -163,18 +163,18 @@
 			tableLayoutPanel4.Location = new Point(48, 318);
 			tableLayoutPanel4.Name = "tableLayoutPanel4";
 			tableLayoutPanel4.RowCount = 4;
-			tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50.9433975F));
-			tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 49.0566025F));
-			tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
-			tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
-			tableLayoutPanel4.Size = new Size(248, 130);
+			tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 58F));
+			tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 42F));
+			tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
+			tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 109F));
+			tableLayoutPanel4.Size = new Size(248, 192);
 			tableLayoutPanel4.TabIndex = 4;
 			// 
 			// addressLabel
 			// 
 			addressLabel.AutoSize = true;
 			addressLabel.Font = new Font("Microsoft JhengHei UI", 12F);
-			addressLabel.Location = new Point(3, 77);
+			addressLabel.Location = new Point(3, 82);
 			addressLabel.Name = "addressLabel";
 			addressLabel.Size = new Size(57, 20);
 			addressLabel.TabIndex = 5;
@@ -184,7 +184,7 @@
 			// 
 			flourLabel.AutoSize = true;
 			flourLabel.Font = new Font("Microsoft JhengHei UI", 12F);
-			flourLabel.Location = new Point(3, 53);
+			flourLabel.Location = new Point(3, 50);
 			flourLabel.Name = "flourLabel";
 			flourLabel.Size = new Size(44, 20);
 			flourLabel.TabIndex = 4;
@@ -194,7 +194,7 @@
 			// 
 			areaLabel.AutoSize = true;
 			areaLabel.Font = new Font("Microsoft JhengHei UI", 12F);
-			areaLabel.Location = new Point(3, 27);
+			areaLabel.Location = new Point(3, 29);
 			areaLabel.Name = "areaLabel";
 			areaLabel.Size = new Size(42, 20);
 			areaLabel.TabIndex = 3;

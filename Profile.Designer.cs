@@ -29,95 +29,180 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
-			pictureBox1 = new PictureBox();
-			label1 = new Label();
-			label2 = new Label();
-			label3 = new Label();
-			label4 = new Label();
-			label5 = new Label();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+			iconButton3 = new FontAwesome.Sharp.IconButton();
+			iconButton4 = new FontAwesome.Sharp.IconButton();
+			button3 = new Button();
+			button4 = new Button();
+			tableLayoutPanel2 = new TableLayoutPanel();
+			tabPage3 = new TabPage();
+			iconButton2 = new FontAwesome.Sharp.IconButton();
+			iconButton1 = new FontAwesome.Sharp.IconButton();
+			button2 = new Button();
+			tableLayoutPanel1 = new TableLayoutPanel();
+			tabPage3.SuspendLayout();
 			SuspendLayout();
 			// 
-			// pictureBox1
+			// iconButton3
 			// 
-			pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-			pictureBox1.Location = new Point(205, 29);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(57, 57);
-			pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-			pictureBox1.TabIndex = 0;
-			pictureBox1.TabStop = false;
+			iconButton3.FlatAppearance.BorderSize = 0;
+			iconButton3.FlatStyle = FlatStyle.Flat;
+			iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+			iconButton3.IconColor = Color.Black;
+			iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			iconButton3.IconSize = 50;
+			iconButton3.Location = new Point(665, 359);
+			iconButton3.Name = "iconButton3";
+			iconButton3.Size = new Size(89, 60);
+			iconButton3.TabIndex = 4;
+			iconButton3.UseVisualStyleBackColor = true;
+			iconButton3.Click += iconButton2_Click;
 			// 
-			// label1
+			// iconButton4
 			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(52, 175);
-			label1.Name = "label1";
-			label1.Size = new Size(31, 15);
-			label1.TabIndex = 1;
-			label1.Text = "Имя";
+			iconButton4.FlatAppearance.BorderSize = 0;
+			iconButton4.FlatStyle = FlatStyle.Flat;
+			iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+			iconButton4.IconColor = Color.Black;
+			iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			iconButton4.IconSize = 50;
+			iconButton4.Location = new Point(570, 359);
+			iconButton4.Name = "iconButton4";
+			iconButton4.Size = new Size(89, 60);
+			iconButton4.TabIndex = 3;
+			iconButton4.UseVisualStyleBackColor = true;
+			iconButton4.Click += iconButton1_Click;
 			// 
-			// label2
+			// button3
 			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(52, 220);
-			label2.Name = "label2";
-			label2.Size = new Size(58, 15);
-			label2.TabIndex = 2;
-			label2.Text = "Фамилия";
+			button3.Location = new Point(24, 359);
+			button3.Name = "button3";
+			button3.Size = new Size(185, 68);
+			button3.TabIndex = 2;
+			button3.Text = "Вернутся на главную страницу";
+			button3.UseVisualStyleBackColor = true;
+			button3.Click += button2_Click;
 			// 
-			// label3
+			// button4
 			// 
-			label3.AutoSize = true;
-			label3.Location = new Point(52, 266);
-			label3.Name = "label3";
-			label3.Size = new Size(58, 15);
-			label3.TabIndex = 3;
-			label3.Text = "Отчество";
+			button4.Location = new Point(285, 364);
+			button4.Name = "button4";
+			button4.Size = new Size(171, 63);
+			button4.TabIndex = 0;
+			button4.Text = "Удалить объявление";
+			button4.UseVisualStyleBackColor = true;
 			// 
-			// label4
+			// tableLayoutPanel2
 			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(52, 314);
-			label4.Name = "label4";
-			label4.Size = new Size(41, 15);
-			label4.TabIndex = 4;
-			label4.Text = "Почта";
+			tableLayoutPanel2.ColumnCount = 3;
+			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+			tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+			tableLayoutPanel2.Location = new Point(0, 0);
+			tableLayoutPanel2.Name = "tableLayoutPanel2";
+			tableLayoutPanel2.RowCount = 2;
+			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+			tableLayoutPanel2.Size = new Size(200, 100);
+			tableLayoutPanel2.TabIndex = 0;
 			// 
-			// label5
+			// tabPage3
 			// 
-			label5.AutoSize = true;
-			label5.Location = new Point(55, 360);
-			label5.Name = "label5";
-			label5.Size = new Size(49, 15);
-			label5.TabIndex = 5;
-			label5.Text = "Пароль";
+			tabPage3.Controls.Add(iconButton3);
+			tabPage3.Controls.Add(iconButton4);
+			tabPage3.Controls.Add(button3);
+			tabPage3.Controls.Add(button4);
+			tabPage3.Location = new Point(0, 0);
+			tabPage3.Name = "tabPage3";
+			tabPage3.Size = new Size(200, 100);
+			tabPage3.TabIndex = 0;
+			// 
+			// iconButton2
+			// 
+			iconButton2.FlatAppearance.BorderSize = 0;
+			iconButton2.FlatStyle = FlatStyle.Flat;
+			iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+			iconButton2.IconColor = Color.Black;
+			iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			iconButton2.IconSize = 50;
+			iconButton2.Location = new Point(696, 316);
+			iconButton2.Name = "iconButton2";
+			iconButton2.Size = new Size(89, 60);
+			iconButton2.TabIndex = 8;
+			iconButton2.UseVisualStyleBackColor = true;
+			iconButton2.Click += iconButton2_Click;
+			// 
+			// iconButton1
+			// 
+			iconButton1.FlatAppearance.BorderSize = 0;
+			iconButton1.FlatStyle = FlatStyle.Flat;
+			iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+			iconButton1.IconColor = Color.Black;
+			iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			iconButton1.IconSize = 50;
+			iconButton1.Location = new Point(601, 316);
+			iconButton1.Name = "iconButton1";
+			iconButton1.Size = new Size(89, 60);
+			iconButton1.TabIndex = 7;
+			iconButton1.UseVisualStyleBackColor = true;
+			iconButton1.Click += iconButton1_Click;
+			// 
+			// button2
+			// 
+			button2.BackColor = Color.FromArgb(0, 122, 174);
+			button2.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Bold);
+			button2.ForeColor = SystemColors.Control;
+			button2.Location = new Point(38, 308);
+			button2.Name = "button2";
+			button2.Size = new Size(219, 68);
+			button2.TabIndex = 6;
+			button2.Text = "Вернутся на главную страницу";
+			button2.UseVisualStyleBackColor = false;
+			button2.Click += button2_Click;
+			// 
+			// tableLayoutPanel1
+			// 
+			tableLayoutPanel1.ColumnCount = 3;
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+			tableLayoutPanel1.Location = new Point(38, 20);
+			tableLayoutPanel1.Name = "tableLayoutPanel1";
+			tableLayoutPanel1.RowCount = 2;
+			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 69.94536F));
+			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30.0546455F));
+			tableLayoutPanel1.Size = new Size(747, 269);
+			tableLayoutPanel1.TabIndex = 5;
 			// 
 			// Profile
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(504, 613);
-			Controls.Add(label5);
-			Controls.Add(label4);
-			Controls.Add(label3);
-			Controls.Add(label2);
-			Controls.Add(label1);
-			Controls.Add(pictureBox1);
+			ClientSize = new Size(811, 403);
+			Controls.Add(iconButton2);
+			Controls.Add(iconButton1);
+			Controls.Add(button2);
+			Controls.Add(tableLayoutPanel1);
+			Icon = (Icon)resources.GetObject("$this.Icon");
 			Name = "Profile";
-			Text = "Profile";
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+			Text = "DreamRent";
+			Load += Profile_Load;
+			tabPage3.ResumeLayout(false);
 			ResumeLayout(false);
-			PerformLayout();
 		}
 
 		#endregion
-
-		private PictureBox pictureBox1;
-		private Label label1;
-		private Label label2;
-		private Label label3;
-		private Label label4;
-		private Label label5;
+		private FontAwesome.Sharp.IconButton iconButton3;
+		private FontAwesome.Sharp.IconButton iconButton4;
+		private Button button3;
+		private Button button4;
+		private TableLayoutPanel tableLayoutPanel2;
+		private TabPage tabPage3;
+		private FontAwesome.Sharp.IconButton iconButton2;
+		private FontAwesome.Sharp.IconButton iconButton1;
+		private Button button2;
+		private TableLayoutPanel tableLayoutPanel1;
 	}
 }

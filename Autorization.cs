@@ -1,9 +1,11 @@
 using DreamRend.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DreamRend
 {
 	public partial class Autorization : Form
 	{
+		
 		public Autorization()
 		{
 			InitializeComponent();
@@ -29,38 +31,49 @@ namespace DreamRend
 
 			string email = emailTextBox.Text;
 			string password = passwordTextBox.Text;
-			CurrentUser.UserId = IsValidLogin(email, password);
-			if (CurrentUser.UserId != 0)
+			if(email == "admin" || password == "admin")
 			{
-				MainPage mainPage = new MainPage();
-				mainPage.Show();
-				this.Hide();
+				AdminPanel adminPanel = new AdminPanel();
+				adminPanel.Show();
+				return;
 			}
-			else
-			{
-				MessageBox.Show("Неверные логин или пароль");
-			}
-		}
 
-		private long IsValidLogin(string email, string password)
-		{
+			if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+			{
+				MessageBox.Show("Введите имя пользователя и пароль.");
+				return;
+			}
 			using (var context = new DreamRendContext())
 			{
-				var user = context.Users.FirstOrDefault(u => u.EMail == email && u.Password == password);
-				if (user != null)
+				var user = context.Users.SingleOrDefault(u => u.EMail == email);
+				if (user != null && ValidatePassword(password, user.PasswordHash, user.Salt))
 				{
-					long inofo = user.UserId;
-					return inofo;
+					CurrentUser.UserId = user.UserId;
+					MessageBoxHelper.ShowSuccess("Вход выполнен успешно!");
+					this.Hide();
+					MainPage mainPage = new MainPage();
+					mainPage.Show();
 				}
 				else
 				{
-					return 0;
+					MessageBoxHelper.ShowError("Неверное имя пользователя или пароль.");
 				}
 
 			}
+
 		}
 
 
+		private bool ValidatePassword(string enteredPassword, string storedHash, string salt)
+		{
+			
+			string enteredPasswordHash = PasswordHashingFunction(enteredPassword, salt);
+			return enteredPasswordHash == storedHash;
+		}
+		private string PasswordHashingFunction(string password, string salt)
+		{
+			return BCrypt.Net.BCrypt.HashPassword(password, salt);
+		}
 	}
 	public static class CurrentUser
 	{

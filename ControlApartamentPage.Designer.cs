@@ -1,6 +1,6 @@
 ﻿namespace DreamRend
 {
-	partial class ControlForMainPage
+	partial class ControlApartamentPage
 	{
 		/// <summary> 
 		/// Обязательная переменная конструктора.
