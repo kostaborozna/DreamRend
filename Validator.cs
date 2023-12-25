@@ -135,12 +135,12 @@ namespace DreamRend
 
 		public bool IsValidPassword(string password)
 		{
-			int minLength = 8;
+			int minLength = 6;
 			int maxLength = 45;
 
 			if (password.Length < minLength || password.Length > maxLength)
 			{
-				MessageBoxHelper.ShowError("Пароль не соответсвует длине (8-45)!");
+				MessageBoxHelper.ShowError("Пароль не соответсвует длине (6-45)!");
 				return false;
 			}
 			if (!password.Any(char.IsUpper))
