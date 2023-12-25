@@ -16,6 +16,14 @@ namespace DreamRend
 		{
 			using (var context = new DreamRendContext())
 			{
+				usersCountlabel.Text = context.Users.Count().ToString();
+				label3.Text = context.Apartments.Count().ToString();
+			}
+
+
+
+			using (var context = new DreamRendContext())
+			{
 				var users = context.Users.ToList();
 				if (users != null)
 				{
